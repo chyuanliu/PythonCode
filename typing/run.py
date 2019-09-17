@@ -60,10 +60,10 @@ class MyForm(Ui_Form, QtWidgets.QWidget):
 
     def next(self):
         while 1:
-            text = self.text_list[random.randint(0, len(self.text_list))]
+            self.text = self.text_list[random.randint(0, len(self.text_list))]
             if text not in self.used_list:
-                self.used_list.append(text)
-                self.textBrowser.setText(text)
+                self.used_list.append(self.text)
+                self.textBrowser.setText(self.text)
                 self.textEdit.clear()
                 self.hide_label()
                 self.start_time = time.time()
